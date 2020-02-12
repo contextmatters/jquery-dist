@@ -29,6 +29,7 @@ jQuery.ajaxPrefilter( "script", function( s ) {
 	if ( s.crossDomain ) {
 		s.type = "GET";
 		s.global = false;
+		s.contents.script = false; // https://github.com/jquery/jquery/issues/2432#issuecomment-403761229
 	}
 } );
 
